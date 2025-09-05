@@ -8,7 +8,7 @@ const router = express.Router();
 dotenv.config()
 /* ------------------ Brevo Setup ------------------ */
 const SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL || "vildashnetwork@gmail.com";
-const SENDER_NAME = process.env.BREVO_SENDER_NAME || "wheelstone";
+const SENDER_NAME = process.env.BREVO_SENDER_NAME || "Next Ride Ready";
 
 const apiKey = process.env.BREVO_API_KEY
 
@@ -86,7 +86,7 @@ router.post("/send-otp", async (req, res) => {
           <p class="note">⚠️ If you did not request this, please ignore this email.</p>
         </div>
         <div class="footer">
-          &copy; ${new Date().getFullYear()} Vildash Network. All rights reserved.
+          &copy; ${new Date().getFullYear()} Next Ride Ready. All rights reserved.
         </div>
       </div>
     </body>
@@ -146,4 +146,5 @@ router.post("/reset-password", async (req, res) => {
 });
 
 export default router;
+
 
