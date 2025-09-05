@@ -70,7 +70,7 @@ router.post("/forward-payment/:orderId", async (req, res) => {
 
     // Create email object
     const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
-    sendSmtpEmail.sender = { email: "vildashnetwork@gmail.com", name: "ZOZAC" };
+    sendSmtpEmail.sender = { email: "vildashnetwork@gmail.com", name: "WHEELSTONE" };
     sendSmtpEmail.to = [{ email: order.user.email, name: order.user.name }];
     sendSmtpEmail.subject = `💎 Your Order #${order._id} is Confirmed – Payment Link Inside`;
     sendSmtpEmail.htmlContent = generateLuxuryEmail({
@@ -94,3 +94,4 @@ router.post("/forward-payment/:orderId", async (req, res) => {
 
 
 export default router;
+
