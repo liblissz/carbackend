@@ -38,6 +38,7 @@ const generateLuxuryEmail = ({ name, notes, paymentLink, totalPrice, paymentMeth
               <p style="text-align:center; margin:30px 0;">
                 <a href="${paymentLink}" style="padding:15px 30px; background:#0a2540; color:#fff; text-decoration:none; border-radius:8px; font-size:16px;">Pay Now</a>
               </p>
+              <span>Or use this link to process your payments: <a href="${paymentLink}">${paymentLink}</a></span>
               <p style="font-size:14px; color:#777;">Total: $${totalPrice} | Payment Method: ${paymentMethod}</p>
               <p style="margin-top:20px; font-size:14px; color:#555;">Thank you for choosing Wheelstone!</p>
             </td>
@@ -70,7 +71,7 @@ router.post("/forward-payment/:orderId", async (req, res) => {
 
     // Create email object
     const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
-    sendSmtpEmail.sender = { email: "vildashnetwork@gmail.com", name: "WHEELSTONE" };
+    sendSmtpEmail.sender = { email: "vildashnetwork@gmail.com", name: "Next Ride Ready" };
     sendSmtpEmail.to = [{ email: order.user.email, name: order.user.name }];
     sendSmtpEmail.subject = `💎 Your Order #${order._id} is Confirmed – Payment Link Inside`;
     sendSmtpEmail.htmlContent = generateLuxuryEmail({
@@ -94,4 +95,5 @@ router.post("/forward-payment/:orderId", async (req, res) => {
 
 
 export default router;
+
 
