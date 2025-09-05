@@ -125,8 +125,8 @@ router.post("/", protect, async (req, res) => {
           <!-- Footer -->
           <tr>
             <td align="center" style="background:#0a2540; padding:20px; color:#ffffff; font-size:13px;">
-              <p style="margin:0;">Wheelstone &copy; 2025 | All rights reserved</p>
-              <p style="margin:5px 0 0;">Contact: <a href="mailto:info@wheelstone.com" style="color:#4ade80; text-decoration:none;">info@wheelstone.com</a></p>
+              <p style="margin:0;">Next Ride Ready &copy; 2025 | All rights reserved</p>
+              <p style="margin:5px 0 0;">Contact: <a href="mailto:;nextrideready@gmail.com" style="color:#4ade80; text-decoration:none;">nextrideready@gmail.com</a></p>
             </td>
           </tr>
         </table>
@@ -158,7 +158,7 @@ router.post("/", protect, async (req, res) => {
     for (const user of normalUsers) {
       try {
         const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
-        sendSmtpEmail.sender = { email: "vildashnetwork@gmail.com", name: "ZOZAC" };
+        sendSmtpEmail.sender = { email: "vildashnetwork@gmail.com", name: "Next Ride Ready" };
         sendSmtpEmail.to = [{ email: user.email }];
         sendSmtpEmail.subject = `✅ Your Order Confirmation`;
         sendSmtpEmail.htmlContent = generateOrderEmail({ recipientName: user.name, recipientProfile: user.profile, isAdmin: false });
@@ -208,4 +208,5 @@ router.delete('/delete', async (req, res) => {
   }
 });
 export default router;
+
 
