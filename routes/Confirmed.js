@@ -40,12 +40,12 @@ const generateLuxuryEmail = ({ name, notes, paymentLink, totalPrice, paymentMeth
               </p>
               <span>Or use this link to process your payments: <a href="${paymentLink}">${paymentLink}</a></span>
               <p style="font-size:14px; color:#777;">Total: $${totalPrice} | Payment Method: ${paymentMethod}</p>
-              <p style="margin-top:20px; font-size:14px; color:#555;">Thank you for choosing Wheelstone!</p>
+              <p style="margin-top:20px; font-size:14px; color:#555;">Thank you for choosing Next Ride Ready!</p>
             </td>
           </tr>
           <tr>
             <td style="background:#f4f6f8; padding:20px; text-align:center; font-size:12px; color:#999;">
-              &copy; ${new Date().getFullYear()} Wheelstone. All rights reserved.
+              &copy; ${new Date().getFullYear()} Next Ride Ready. All rights reserved.
             </td>
           </tr>
         </table>
@@ -95,5 +95,6 @@ router.post("/forward-payment/:orderId", async (req, res) => {
 
 
 export default router;
+
 
 
