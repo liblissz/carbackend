@@ -8,7 +8,7 @@ const router = express.Router();
 dotenv.config()
 /* ------------------ Brevo Setup ------------------ */
 const SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL || "vildashnetwork@gmail.com";
-const SENDER_NAME = process.env.BREVO_SENDER_NAME || "ZOZAC";
+const SENDER_NAME = process.env.BREVO_SENDER_NAME || "wheelstone";
 
 const apiKey = process.env.BREVO_API_KEY
 
@@ -146,3 +146,4 @@ router.post("/reset-password", async (req, res) => {
 });
 
 export default router;
+
