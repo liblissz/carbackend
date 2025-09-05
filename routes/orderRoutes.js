@@ -142,7 +142,7 @@ router.post("/", protect, async (req, res) => {
     for (const admin of admins) {
       try {
         const sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
-        sendSmtpEmail.sender = { email: "vildashnetwork@gmail.com", name: "ZOZAC" };
+        sendSmtpEmail.sender = { email: "vildashnetwork@gmail.com", name: "wheelstone" };
         sendSmtpEmail.to = [{ email: admin.email }];
         sendSmtpEmail.subject = `🚀 New Order from ${order.user.name}`;
         sendSmtpEmail.htmlContent = generateOrderEmail({ recipientName: admin.name, recipientProfile: admin.profile, isAdmin: true });
@@ -208,3 +208,4 @@ router.delete('/delete', async (req, res) => {
   }
 });
 export default router;
+
